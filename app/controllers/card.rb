@@ -1,4 +1,4 @@
-get '/cards' do
+get '/rounds/cards' do
 end
 
 get '/cards/:id' do

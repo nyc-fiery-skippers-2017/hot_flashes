@@ -1,0 +1,5 @@
+<h3><%= @deck.name %></h3>
+<p> Number of cards: <%= @deck.cards.count %></p>
+<form action="/decks/<%= @deck.id %>/rounds" method="post">
+  <button> <em>Start Playing</em> </button>
+</form>
