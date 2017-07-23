@@ -1,0 +1,12 @@
+<h3> <%= @deck.name %> </h3>
+
+
+<form action="/guesses" method="post">
+  <label for="guess_input"><%= @card.question %></label>
+  <br><br>
+  <input id="guess_input" name="guess" type="text">
+  <input type="hidden" name="deck" value="<% @deck.id %>">
+  <input type="hidden" name="round" value="<% @round.id %>">
+  <br><br>
+  <button> <em>submit your guess</em> </button>
+</form>
