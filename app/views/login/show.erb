@@ -1,0 +1,21 @@
+<div class="container">
+  <h2> Welcome <%= @user.name %> </h2>
+
+<%  @user.rounds.each do |round| %>
+  <%= round.deck.name%>
+  <table>
+    <tr>
+      <th> Cards in deck </th>
+      <th> First Guess Correct </th>
+      <th> Total Guesses </th>
+    </tr>
+    <tr>
+      <td><%=round.deck.cards.count%></td>
+      <td>  </td>
+      <td> <%= round.guesses.count %> </td>
+    </tr>
+  </table>
+  <br>
+  <% end %>
+
+</div>

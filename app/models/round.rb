@@ -7,14 +7,18 @@ class Round < ApplicationRecord
   has_many :guessed_cards, through: :guesses, source: :card
 
   def correct_guesses
-    self.guesses.where(results: true)
+    self.guesses.where(result: true)
   end
 
   def correct_cards
     self.correct_guesses.map { |guess| guess.card }
   end
 
-  def
-    (self.cards - self.correct_cards).shuffle
+  def unguessed_card
+    (self.cards - self.guessed_cards).sample
+  end
+
+  def random_card
+    (self.cards - self.correct_cards).sample
   end
 end
