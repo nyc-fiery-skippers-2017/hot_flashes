@@ -1,6 +1,6 @@
 get '/rounds/:id' do
-  @round_id = Round.find_by(id: params[:id])
-  erb :'round/show'
+  @round = Round.find_by(id: params[:id])
+  erb :'rounds/show'
 end
 
 post '/decks/:deck_id/rounds' do
