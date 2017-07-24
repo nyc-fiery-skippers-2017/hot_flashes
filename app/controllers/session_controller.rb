@@ -13,7 +13,7 @@ post '/login' do
   end
 end
 
-delete '/logout' do
+get '/logout' do
   session.delete(:user_id)
   redirect '/login'
 end

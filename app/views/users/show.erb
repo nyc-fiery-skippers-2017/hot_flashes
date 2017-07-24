@@ -2,16 +2,16 @@
   <h2> Welcome <%= @user.name %> </h2>
 
 <%  @user.rounds.each do |round| %>
-  <%= round.deck.name%>
+<h3>  <a href='/decks/<%= round.deck.id%>'><%= round.deck.name%></a> </h3>
   <table>
-    <tr>
+    <thead>
       <th> Cards in deck </th>
       <th> First Guess Correct </th>
       <th> Total Guesses </th>
-    </tr>
+    </thead>
     <tr>
       <td><%=round.deck.cards.count%></td>
-      <td>  </td>
+      <td><%=round.number_of_correct_first_guesses%> </td>
       <td> <%= round.guesses.count %> </td>
     </tr>
   </table>
