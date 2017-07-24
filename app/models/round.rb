@@ -21,4 +21,8 @@ class Round < ApplicationRecord
   def random_card
     (self.cards - self.correct_cards).sample
   end
+
+  def number_of_correct_first_guesses
+    self.cards.select { |card| card.guesses.count == 1 }.count
+  end
 end

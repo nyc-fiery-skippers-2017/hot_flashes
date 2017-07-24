@@ -18,16 +18,15 @@
   <title>Hot Flashes</title>
 </head>
 <body>
-  <h1>HOT FLASHCARDS</h1>
-  <nav>
-    <form action="/logout" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button type="submit">Logout</button>
-    </form>
-    <a href='/login'> Login</a>
-    <a href='/'> Home</a>
-  </nav>
-
+  <% if current_user %>
+    <li><a href="/">Home</a></li>
+    <li><a href="/users/<%= current_user.id %>">Profile Page</a></li>
+    <li><a href="/logout">Logout</a></li>
+  <% else %>
+    <li><a href="/">Home</a></li>
+    <li><a href="/users/new">Register</a></li>
+    <li><a href="/login/new">Login</a></li>
+  <% end%>
 
   <%= yield %>
 

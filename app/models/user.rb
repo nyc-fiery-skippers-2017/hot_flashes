@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :rounds, foreign_key: :player_id
   has_many :guesses, through: :rounds
   has_many :cards, through: :decks
+  has_many :played_decks, through: :rounds, source: :deck
 
   validates :name, :email, presence: true
   validates :password, length: { minimum: 6 }

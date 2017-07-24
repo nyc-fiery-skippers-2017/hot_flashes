@@ -1,6 +1,6 @@
 get '/rounds/:id' do
   @round_id = Round.find_by(id: params[:id])
-  redirect "/deck/#{deck.id}"
+  erb :'round/show'
 end
 
 post '/decks/:deck_id/rounds' do
