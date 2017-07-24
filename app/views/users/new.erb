@@ -1,0 +1,22 @@
+<!-- sign-up sheet -->
+<div class="container">
+  <h2>Sign-Up</h2>
+  <form method="POST" action="/users">
+
+    <label for="name_input">Name:</label>
+    <input id="name_input" name="user[name]" type="text" >
+    <br>
+
+    <label for="email_input">Email:</label>
+    <input id="email_input"  name="user[email]" type="email" >
+    <br>
+
+    <label for="password_input">Password:</label>
+    <input id="password_input"  name="user[password]" type="password" >
+    <br>
+
+    <input type="submit" value="Sign Up" class="button">
+  </form>
+  <p>Already signed-up? <a href="/login">Login</a> </p>
+
+</div>

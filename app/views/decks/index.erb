@@ -1,0 +1,9 @@
+<div class="containers">
+  <h3>Flashcard decks</h3>
+    <ul>
+      <% Deck.all.each do |deck| %>
+      <li><a href='/decks/<%= deck.id%>'><%= deck.name %> </li>
+      <% end %>
+    </ul>
+  </div>
+adfdfaa thundereadsfadsfadf

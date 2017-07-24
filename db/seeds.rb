@@ -6,13 +6,14 @@ Card.delete_all
 Round.delete_all
 Guess.delete_all
 
+users = []
 30.times do
-  User.create(name: Faker::GameOfThrones.character, email: Faker::Internet.email, password: "password")
+  users << User.create(name: Faker::GameOfThrones.character, email: Faker::Internet.email, password: "password")
 end
 
 decks = []
 10.times do
-  decks << Deck.create(name: Faker::Team.name, category: Faker::Team.sport, creator: User.all.sample)
+  decks << Deck.create(name: Faker::Team.name, category: Faker::Team.sport, creator: users.sample)
 end
 
 rounds = []
